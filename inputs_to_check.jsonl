@@ -1,3 +1,20 @@
 {"premise": "Two women are embracing while holding to go packages.", "hypothesis": "The men are fighting outside a deli.", "label": 2, "predicted_scores": [-4.508498191833496, -2.42450213432312, 5.888273239135742], "predicted_label": 2}
 {"premise": "A man spiking the ball at a volleyball game.", "hypothesis": "The man misses the volleyball.", "label": 2, "predicted_scores": [-0.7215954661369324, 2.1716251373291016, -1.761745572090149], "predicted_label": 1}
 {"premise": "These two people in hats are standing on rocky terrain, with their arms around each other.", "hypothesis": "Two people are hugging.", "label": 1, "predicted_scores": [0.49281367659568787, 0.44707319140434265, -1.1606497764587402], "predicted_label": 0}
+
+// Semantic Meaning
+{"premise": "A boy in sandals is looking at a camera in a busy street.", "hypothesis": "A boy is looking at electronics near a road", "label": 0, "predicted_scores": [-1.4254934787750244, -1.4160311222076416, 2.263469696044922], "predicted_label": 2}
+{"premise": "A boy with a basketballs glowers at the camera.", "hypothesis": "The boy scowls", "label": 0, "predicted_scores": [-4.298051834106445, -1.536180853843689, 4.676769256591797], "predicted_label": 2}
+
+// Mispelling
+{"premise": "A woman dressed in a black shirt with purple bikini bottoms is playing volleyball in a fenced in area.", "hypothesis": "a woman is playing voleyball", "label": 0, "predicted_scores": [0.15635588765144348, -0.5040885210037231, 0.31166788935661316], "predicted_label": 2}
+{"premise": "A teenage is on a surfboard.", "hypothesis": "a teanager stile a surfboard", "label": 0, "predicted_scores": [-2.344740867614746, -1.62615168094635, 3.1719295978546143], "predicted_label": 2}
+{"premise": "A young man in front of a grill laughs while pointing at something to his left.", "hypothesis": "A young man is in front of a girll", "label": 0, "predicted_scores": [0.07293576002120972, -0.1422179639339447, 0.09730615466833115], "predicted_label": 2}
+
+// Multi reasoning
+{"premise": "A woman dressed in a light yellow tank top, white pants, and sunglasses looks to her right as she is drinking a bottle of water.", "hypothesis": "A woman looks to the side.", "label": 0, "predicted_scores": [-0.43053555488586426, -2.368664503097534, 2.4703071117401123], "predicted_label": 2}
+{"premise": "A wrestler in purple lost, and the wrestler in blue celebrates, then the purple wrestler goes home.", "hypothesis": "The wrestler in purple celebrates.", "label": 2, "predicted_scores": [4.018820762634277, -1.376588225364685, -2.873116970062256], "predicted_label": 0}
+
+// Overlap
+{"premise": "The couple are wearing glasses intended for 3D movies.", "hypothesis": "A couple are wearing sunglasses.", "label": 2, "predicted_scores": [4.283848285675049, -1.179965853691101, -3.62863826751709], "predicted_label": 0}
+{"premise": "A wrestler in purple curls up in a ball while one in blue celebrates.", "hypothesis": "The wrestler in purple celebrates.", "label": 2, "predicted_scores": [4.230330467224121, -1.0657203197479248, -3.6593453884124756], "predicted_label": 0}
