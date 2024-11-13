@@ -1,8 +1,8 @@
 import json
 
 # Paths to the input and output files
-input_file_path = "/Users/tarun1/NLP_Final_Project/fp-dataset-artifacts/eval_output/eval_predictions.jsonl"
-output_file_path = "/Users/tarun1/NLP_Final_Project/fp-dataset-artifacts/eval_output/mismatched_examples.jsonl"
+input_file_path = "./eval_output/eval_predictions.jsonl"
+output_file_path = "./eval_output/mismatched_examples.jsonl"
 
 # Open the input file for reading and the output file for writing
 with open(input_file_path, 'r') as infile, open(output_file_path, 'w') as outfile:

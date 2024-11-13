@@ -1,9 +1,10 @@
 import json
 from pathlib import Path
+from functools import cmp_to_key
 
 # Path to the input file and base directory for output files
-input_file_path = "/Users/tarun1/NLP_Final_Project/fp-dataset-artifacts/eval_output/eval_predictions.jsonl"
-output_dir = Path("/Users/tarun1/NLP_Final_Project/fp-dataset-artifacts/eval_output/mismatched_examples")
+input_file_path = "./eval_output/eval_predictions.jsonl"
+output_dir = Path("./eval_output/mismatched_examples_sorted")
 
 # Ensure the output directory exists
 output_dir.mkdir(parents=True, exist_ok=True)
@@ -20,18 +21,23 @@ def get_file_handler(label, predicted_label):
         file_handlers[(label, predicted_label)] = open(output_dir / filename, 'a')
     return file_handlers[(label, predicted_label)]
 
+def compare(item1):
+    return abs(item1["predicted_scores"][item1["predicted_label"]] - item1["predicted_scores"][item1["label"]])
+
 # Open the input file and process each line
 with open(input_file_path, 'r') as infile:
-    for line in infile:
-        # Load each line as a JSON object
-        example = json.loads(line)
-        
+    examples = [json.loads(line) for line in infile]
+    examples.sort(key=compare, reverse=False)
+
+    for example in examples:
+        # Load each line as a JSON object        
         # Check for mismatched label and predicted_label
         if example["label"] != example["predicted_label"]:
             # Get the file handler for the specific mismatch type
             outfile = get_file_handler(example["label"], example["predicted_label"])
             # Write the mismatched example to the appropriate output file
             outfile.write(json.dumps(example) + '\n')
+
 
 # Close all file handlers
 for handler in file_handlers.values():
