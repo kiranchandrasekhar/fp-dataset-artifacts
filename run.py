@@ -81,12 +81,14 @@ def main():
     model_class = model_classes[args.task]
     # Initialize the model and tokenizer from the specified pretrained model/checkpoint
     model = model_class.from_pretrained(args.model, **task_kwargs)
+
     # Make tensor contiguous if needed https://github.com/huggingface/transformers/issues/28293
     if hasattr(model, 'electra'):
         for param in model.electra.parameters():
             if not param.is_contiguous():
                 param.data = param.data.contiguous()
     tokenizer = AutoTokenizer.from_pretrained(args.model, use_fast=True)
+    print(tokenizer)
 
     # Select the dataset preprocessing function (these functions are defined in helpers.py)
     if args.task == 'qa':

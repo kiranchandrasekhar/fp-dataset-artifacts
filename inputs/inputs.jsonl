@@ -1,1 +1,10 @@
-{"premise": "A wrestler in purple lost, and the wrestler in blue celebrates.", "hypothesis": "The wrestler in purple celebrates.", "label": 2}
+{"premise": "Did you catch the game last night?", "hypothesis": "Did you catch the game last night?", "label": 0}
+{"premise": "Did you catch the game the last night?", "hypothesis": "Did you catch the game last night?", "label": 0}
+{"premise": "Did_you_catch_the_game_last_night?", "hypothesis": "Did you catch the game last night?", "label": 0}
+{"premise": "Didyoucatchthegamelastnight?", "hypothesis": "Did you catch the game last night?", "label": 0}
+{"premise": "Did you catch the ame last night?", "hypothesis": "Did you catch the game last night?", "label": 0}
+{"premise": "Did you catch the ame lastnight?", "hypothesis": "Did you catch the game last night?", "label": 0}
+{"premise": "Did you watch the game last night?", "hypothesis": "Did you catch the game last night?", "label": 0}
+{"premise": "Did u watch the game last night?", "hypothesis": "Did you catch the game last night?", "label": 0}
+{"premise": "Did you watch the ame last night?", "hypothesis": "Did you catch the game last night?", "label": 0}
+{"premise": "Did u watch the ame last night?", "hypothesis": "Did you catch the game last night?", "label": 0}

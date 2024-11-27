@@ -1,1 +1,17 @@
-{"premise": "A wrestler in purple lost, and the wrestler in blue celebrates.", "hypothesis": "The wrestler in purple celebrates.", "label": 2, "predicted_scores": [4.018820762634277, -1.376588225364685, -2.873116970062256], "predicted_label": 0}
+{"premise": "Did you catch the game last night?", "hypothesis": "Did you catch the game last night?", "label": 0, "predicted_scores": [3.1185646057128906, -0.697496235370636, -2.4979426860809326], "predicted_label": 0}
+{"premise": "Did you catch the game the last night?", "hypothesis": "Did you catch the game last night?", "label": 0, "predicted_scores": [3.4202041625976562, -0.8802381753921509, -2.6617908477783203], "predicted_label": 0}
+{"premise": "Did_you_catch_the_game_last_night?", "hypothesis": "Did you catch the game last night?", "label": 0, "predicted_scores": [2.573580265045166, -0.8681169152259827, -1.5010031461715698], "predicted_label": 0}
+{"premise": "Didyoucatchthegamelastnight?", "hypothesis": "Did you catch the game last night?", "label": 0, "predicted_scores": [-0.11731269210577011, 0.05446142330765724, 0.08754788339138031], "predicted_label": 2}
+
+{"premise": "Did you catch the ame last night?", "hypothesis": "Did you catch the game last night?", "label": 0, "predicted_scores": [2.823665142059326, -0.23539963364601135, -2.9018702507019043], "predicted_label": 0}
+
+{"premise": "Did you catch the ame lastnight?", "hypothesis": "Did you catch the game last night?", "label": 0, "predicted_scores": [2.540313720703125, -0.6883944272994995, -1.728948950767517], "predicted_label": 0}
+
+{"premise": "Did you watch the game last night?", "hypothesis": "Did you catch the game last night?", "label": 0, "predicted_scores": [-2.0154805183410645, -0.2918112874031067, 1.800561785697937], "predicted_label": 2}
+
+{"premise": "Did catch the game last night?", "hypothesis": "Did you catch the game last night?", "label": 0, "predicted_scores": [-2.0154805183410645, -0.2918112874031067, 1.800561785697937], "predicted_label": 2}
+
+{"premise": "Did u watch the game last night?", "hypothesis": "Did you catch the game last night?", "label": 0, "predicted_scores": [-1.4454857110977173, -0.444733589887619, 1.4624072313308716], "predicted_label": 2}
+
+{"premise": "Did you watch the ame last night?", "hypothesis": "Did you catch the game last night?", "label": 0, "predicted_scores": [-2.216977596282959, -0.4858727753162384, 2.0984272956848145], "predicted_label": 2}
+{"premise": "Did u watch the ame last night?", "hypothesis": "Did you catch the game last night?", "label": 0, "predicted_scores": [-1.7224619388580322, -0.8302668929100037, 1.9739638566970825], "predicted_label": 2}
