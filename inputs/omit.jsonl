@@ -1,0 +1,95 @@
+{"premise": "Did you catch the ame last night?", "hypothesis": "Did you catch the game last night?", "label": 0}
+{"premise": "Did you catch the ame last night?", "hypothesis": "Did you catch the fame last night?", "label": 2}
+   
+{"premise": "Wanna rab coffee tomorrow?", "hypothesis": "Wanna grab coffee tomorrow?", "label": 0}
+{"premise": "Wanna rab coffee tomorrow?", "hypothesis": "Wanna crab coffee tomorrow?", "label": 2}
+
+{"premise": "Im dying someone canc so I can dogsit!", "hypothesis": "I'm dying someone cancel so I can dogsit!", "label": 2}
+{"premise": "Im dying someone canc so I can dogsit!", "hypothesis": "I'm dying someone cancer so I can dogsit!", "label": 0}
+
+{"premise": "Hahahahahahaha thats hilarious!", "hypothesis": "Hahahahahahahahaha that's hilarious!", "label": 0}
+{"premise": "OMG, you need to see the latest eme!", "hypothesis": "OMG, you need to see the latest meme!", "label": 0}
+
+{"premise": "Seriously this eather is so crazy!", "hypothesis": "Seriously, this weather is so crazy!", "label": 1}
+{"premise": "Seriously this eather is so crazy!", "hypothesis": "Seriously, this weather is so crazy!", "label": 1}
+
+{"premise": "Whatchauptomefriend?", "hypothesis": "What's your friend?", "label": 0}
+{"premise": "Whatchauptomefriend?", "hypothesis": "What chauptome friend?", "label": 2}
+
+  {"premise": "Feelingburntoutaftettodayhelp!", "hypothesis": "Feeling burnt out aftet today, help!", "label": 0}
+  {"premise": "Guesswhosingleagain!", "hypothesis": "Guess whose ngle again!", "label": 2}
+
+
+  {"premise": "Youwontyoubelievewhatjusthappened!", "hypothesis": "You wont you believe what just happened!", "label": 2}
+  {"premise": "Youwontyoubelievewhatjusthappened!", "hypothesis": "You wont believe what just happened!", "label": 2}
+
+
+  {"premise": "Moviemarathonatmyplacethisweekend?", "hypothesis": "Movie marathon at my place this weekend?", "label": 0}
+  {"premise": "Needstudymotivationanyideas?", "hypothesis": "Needy motivation, any ideas?", "label": 2}
+
+
+  {"premise": "Sostressedaboutthispresentation!", "hypothesis": "So stressed about this presentation!", "label": 0}
+  {"premise": "Sostressedaboutthispresentation!", "hypothesis": "Sos tress dabout this presention!", "label": 2}
+
+
+  {"premise": "Finallyfinishedthatbookyourecommended!", "hypothesis": "Finally finished that book you recommended!", "label": 0}
+  {"premise": "Anygoodshowsbingeablelately?", "hypothesis": "Any good shows being possible lately?", "label": 2}
+  {"premise": "Anygoodshowsbingeablelately?", "hypothesis": "Any good shows bingeable lately?", "label": 0}
+
+
+  {"premise": "Justsawthecraziestthingonthebus!", "hypothesis": "Just saw the craziest thing on the bus!", "label": 0}
+
+  {"premise": "Sendhelpfoodistrappedintheoven!", "hypothesis": "Send help food is wrapped in the oven!", "label": 2}
+  {"premise": "Sendhelpfoodistrappedintheoven!", "hypothesis": "Send help food is trapped in the oven!", "label": 0}
+
+
+  {"premise": "Cantwaittoseeyouattheparty!", "hypothesis": "Cant wait to see you at the party!", "label": 0}
+
+
+  {"premise": "Missyoutonsalreadyletshangsoon!", "hypothesis": "Miss youtons already let's hang soon!", "label": 2}
+  {"premise": "Missyoutonsalreadyletshangsoon!", "hypothesis": "Miss you tons already let's hang soon!", "label": 0}
+
+
+  {"premise": "CantbelieveImissedthelastbus!", "hypothesis": "Can't believe I missed the last bus!", "label": 0}
+
+
+  {"premise": "Needanysuggestionsforagoodmovieatnight?", "hypothesis": "Need any suggestions for a good movie night?", "label": 0}
+  {"premise": "Needanysuggestionsforagoodmovieatnight?", "hypothesis": "Need any suggestions for a good movie at night?", "label": 2}
+
+
+  {"premise": "Feelingproudaccomplishedsomethingbigtoday!", "hypothesis": "Feeling proud of something big today!", "label": 2}
+  {"premise": "Feelingproudaccomplishedsomethingbigtoday!", "hypothesis": "Feeling proud I accomplished something big today!", "label": 0}
+
+
+  {"premise": "Wishcouldteleportmyselftothebeachrightnow.", "hypothesis": "Wish could teleport myself to the beach right now.", "label": 2}
+  {"premise": "Wishcouldteleportmyselftothebeachrightnow.", "hypothesis": "Wish I could teleport myself to the beach right now.", "label": 2}
+
+
+  {"premise": "Justsawthecutestaudiofapuppylearningtotalk.", "hypothesis": "Just saw the cutest audio from puppy learning to talk.", "label": 0}
+  {"premise": "Excitedtostartafreshnewprojectthistoday.", "hypothesis": "Excited to start a fresh new project this today.", "label": 2}
+  {"premise": "Excitedtostartafreshnewprojectthistoday.", "hypothesis": "Excited to start a fresh new project today.", "label": 0}
+
+
+  {"premise": "Havingtroubledecidingwhichoptionistobetter.", "hypothesis": "Having trouble deciding which option is to better.", "label": 2}
+  {"premise": "Havingtroubledecidingwhichoptionistobetter.", "hypothesis": "Having trouble deciding which option is better.", "label": 0}
+
+
+  {"premise": "Finallyfinishedorganizingmyclosetfeelsamazing!", "hypothesis": "Finally finished organizing my closet feels amazing!", "label": 0}
+  {"premise": "Learnedsomethingnewtodayitssoneversadtoolate!", "hypothesis": "Learned something new today it's so wonderful too late!", "label": 2}
+  {"premise": "Learnedsomethingnewtodayitssoneversadtoolate!", "hypothesis": "Learned something new today it's so never too late!", "label": 0}
+
+
+  {"premise": "Cravingapizzabuttryingtoresisttemptation.", "hypothesis": "Craving a pizza, but trying to resist temptation.", "label": 0}
+  {"premise": "Planningweekendgettogetheranyonesinterested?", "hypothesis": "Planning weekend get together anyone's interested?", "label": 0}
+  {"premise": "Canwaittousethisnewlyacquiredskillsoon.", "hypothesis": "Can wait to use this newly acquired skill soon.", "label": 0}
+  {"premise": "Feelinggratefulforallofthesupportivepeopleinmylife.", "hypothesis": "Feeling grateful for all of the supportive people in my life.", "label": 0}
+  {"premise": "Whatshappeningonthelatestseasonofyourfavoriteshow?", "hypothesis": "What's happening on the latest season of your favorites, though?", "label": 2}
+  {"premise": "Whatshappeningonthelatestseasonofyourfavoriteshow?", "hypothesis": "What's happening on the latest season of your favorites show?", "label": 0}
+
+
+  {"premise": "Anyoneelseafraidofthedarkadmitnojudgement.", "hypothesis": "Anyone else afraid of the dark admit no judgement.", "label": 0}
+  {"premise": "Justreadafascinatingarticleaboutancientcivilizations.", "hypothesis": "Just read a fascinating article about ancient civilizations.", "label": 0}
+  {"premise": "Feelingaccomplishedcrossedofeverythingontmylisttoday.", "hypothesis": "Feeling accomplished crossed of everything on my list today.", "label": 0}
+  {"premise": "Strugglingtofindmotivationanyadviceisappreciated.", "hypothesis": "Struggling to find motivation any advice is appreciated.", "label": 0}
+  {"premise": "Cantw waittoseeyouagainletsmakesoonplans!", "hypothesis": "Can't wait to see you again, let's make soon plans!", "label": 2}
+  {"premise": "Cantw waittoseeyouagainletsmakesoonplans!", "hypothesis": "Can't wait to see you again, let's make plans soon!", "label": 0}

@@ -7,7 +7,28 @@ from helpers import prepare_dataset_nli, prepare_train_dataset_qa, \
 import os
 import json
 
+import re
+import random
+
 NUM_PREPROCESSING_WORKERS = 2
+
+def add_spelling_errors(datum, num_letters_to_remove=0):
+    for i in range(num_letters_to_remove):
+        premise = datum['premise']
+        spaces = [-1]
+        spaces += [m.start() for m in re.finditer('\\s', premise)]
+        words = premise.split()
+
+        word_i_to_edit = random.randint(0, len(words)-1)
+        word_to_edit = words[word_i_to_edit]
+        if len(word_to_edit) <= 1:
+            continue
+        char_to_remove = random.randint(0, len(word_to_edit)-1)
+
+        new_word = word_to_edit[:char_to_remove] + word_to_edit[char_to_remove+1:]
+        datum['premise'] = premise[:spaces[word_i_to_edit]+1] + new_word + premise[spaces[word_i_to_edit] + len(word_to_edit) + 1:]
+
+    return datum
 
 
 def main():
@@ -88,7 +109,6 @@ def main():
             if not param.is_contiguous():
                 param.data = param.data.contiguous()
     tokenizer = AutoTokenizer.from_pretrained(args.model, use_fast=True)
-    print(tokenizer)
 
     # Select the dataset preprocessing function (these functions are defined in helpers.py)
     if args.task == 'qa':
@@ -124,6 +144,9 @@ def main():
         eval_dataset = dataset[eval_split]
         if args.max_eval_samples:
             eval_dataset = eval_dataset.select(range(args.max_eval_samples))
+
+        eval_dataset = eval_dataset.map(add_spelling_errors)
+
         eval_dataset_featurized = eval_dataset.map(
             prepare_eval_dataset,
             batched=True,
