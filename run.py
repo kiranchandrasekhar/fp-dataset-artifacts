@@ -30,6 +30,18 @@ def add_spelling_errors(datum, num_letters_to_remove=0):
 
     return datum
 
+def remove_spaces(datum, num_spaces_to_remove=0):
+    for i in range(num_spaces_to_remove):
+        premise = datum['premise']
+        spaces = [m.start() for m in re.finditer('\\s', premise)]
+        if len(spaces) == 0:
+            break
+        space_to_remove = random.randint(0, len(spaces)-1)
+
+        datum['premise'] = premise[:spaces[space_to_remove]] + premise[spaces[space_to_remove]+ 1:]
+
+    return datum
+
 
 def main():
     argp = HfArgumentParser(TrainingArguments)
@@ -146,6 +158,7 @@ def main():
             eval_dataset = eval_dataset.select(range(args.max_eval_samples))
 
         eval_dataset = eval_dataset.map(add_spelling_errors)
+        eval_dataset = eval_dataset.map(remove_spaces)
 
         eval_dataset_featurized = eval_dataset.map(
             prepare_eval_dataset,
