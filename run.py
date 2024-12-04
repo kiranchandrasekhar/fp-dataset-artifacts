@@ -12,7 +12,11 @@ import random
 
 NUM_PREPROCESSING_WORKERS = 2
 
-def add_spelling_errors(datum, num_letters_to_remove=0):
+def add_ids(datum, idx):
+    datum['id'] = idx
+    return datum
+
+def add_spelling_errors(datum, num_letters_to_remove=2):
     for i in range(num_letters_to_remove):
         premise = datum['premise']
         spaces = [-1]
@@ -146,6 +150,11 @@ def main():
         train_dataset = dataset['train']
         if args.max_train_samples:
             train_dataset = train_dataset.select(range(args.max_train_samples))
+
+        train_dataset = train_dataset.map(add_ids, with_indices=True)
+        train_dataset = train_dataset.map(add_spelling_errors)
+        train_dataset = train_dataset.map(remove_spaces)
+
         train_dataset_featurized = train_dataset.map(
             prepare_train_dataset,
             batched=True,
@@ -157,6 +166,7 @@ def main():
         if args.max_eval_samples:
             eval_dataset = eval_dataset.select(range(args.max_eval_samples))
 
+        eval_dataset = eval_dataset.map(add_ids, with_indices=True)
         eval_dataset = eval_dataset.map(add_spelling_errors)
         eval_dataset = eval_dataset.map(remove_spaces)
 
