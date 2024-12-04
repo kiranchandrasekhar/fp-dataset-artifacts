@@ -3,4 +3,5 @@ output/
 __pycache__
 env
 trained_model
+model
 trained_og_model
