@@ -16,7 +16,7 @@ def add_ids(datum, idx):
     datum['id'] = idx
     return datum
 
-def add_spelling_errors(datum, num_letters_to_remove=2):
+def add_spelling_errors(datum, num_letters_to_remove=0):
     for i in range(num_letters_to_remove):
         premise = datum['premise']
         spaces = [-1]
