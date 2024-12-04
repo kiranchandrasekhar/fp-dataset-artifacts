@@ -17,4 +17,8 @@
 
 // Overlap
 {"premise": "The couple are wearing glasses intended for 3D movies.", "hypothesis": "A couple are wearing sunglasses.", "label": 2, "predicted_scores": [4.283848285675049, -1.179965853691101, -3.62863826751709], "predicted_label": 0}
-{"premise": "A wrestler in purple curls up in a ball while one in blue celebrates.", "hypothesis": "The wrestler in purple celebrates.", "label": 2, "predicted_scores": [4.230330467224121, -1.0657203197479248, -3.6593453884124756], "predicted_label": 0}
+{"premise": "A wrestler in purple curls up in a ball while one in blue celebrates.", "hypothesis": "The wrestler in purple celebrates.", "label": 2, "predicted_scores": [4.230330467224121, -1.0657203197479248, -3.6593453884124756], "predicted_label": 0}\
+
+
+// Interesting mispellings
+{"premise": "A person wearing orange pants in playing in the mu.", "hypothesis": "Someone is playing in mud.", "label": 0, "predicted_scores": [0.5380719304084778, 0.08258682489395142, -0.5773977041244507], "predicted_label": 0}
