@@ -16,7 +16,10 @@ def add_ids(datum, idx):
     datum['id'] = idx
     return datum
 
-def add_spelling_errors(datum, num_letters_to_remove=0):
+def add_spelling_errors(datum, num_letters_to_remove=2, probability=1):
+    if random.random() >= probability:
+        return datum
+        
     for i in range(num_letters_to_remove):
         premise = datum['premise']
         spaces = [-1]
@@ -34,7 +37,10 @@ def add_spelling_errors(datum, num_letters_to_remove=0):
 
     return datum
 
-def remove_spaces(datum, num_spaces_to_remove=0):
+def remove_spaces(datum, num_spaces_to_remove=0,  probability=1):
+    if random.random() >= probability:
+        return datum
+        
     for i in range(num_spaces_to_remove):
         premise = datum['premise']
         spaces = [m.start() for m in re.finditer('\\s', premise)]
@@ -84,6 +90,13 @@ def main():
                       help='Limit the number of examples to train on.')
     argp.add_argument('--max_eval_samples', type=int, default=None,
                       help='Limit the number of examples to evaluate on.')
+    
+    argp.add_argument('--remove_letters', type=int, default=0,
+                      help='Limit the number of letters to remove from premises')
+    argp.add_argument('--remove_spaces', type=int, default=0,
+                    help='Limit the number of spaces to remove from premises')
+    argp.add_argument('--preprocess_prob', type=float, default=.05,
+                help='Probability of applying preprocessing to a data example in training')
 
     training_args, args = argp.parse_args_into_dataclasses()
 
@@ -152,8 +165,8 @@ def main():
             train_dataset = train_dataset.select(range(args.max_train_samples))
 
         train_dataset = train_dataset.map(add_ids, with_indices=True)
-        train_dataset = train_dataset.map(add_spelling_errors)
-        train_dataset = train_dataset.map(remove_spaces)
+        train_dataset = train_dataset.map(add_spelling_errors, fn_kwargs={"num_letters_to_remove": args.remove_letters,"probability": args.preprocess_prob})
+        train_dataset = train_dataset.map(remove_spaces, fn_kwargs={"num_spaces_to_remove": args.remove_spaces, "probability": args.preprocess_prob})
 
         train_dataset_featurized = train_dataset.map(
             prepare_train_dataset,
@@ -167,8 +180,8 @@ def main():
             eval_dataset = eval_dataset.select(range(args.max_eval_samples))
 
         eval_dataset = eval_dataset.map(add_ids, with_indices=True)
-        eval_dataset = eval_dataset.map(add_spelling_errors)
-        eval_dataset = eval_dataset.map(remove_spaces)
+        eval_dataset = eval_dataset.map(add_spelling_errors, fn_kwargs={"num_letters_to_remove": args.remove_letters,"probability": 1})
+        eval_dataset = eval_dataset.map(remove_spaces, fn_kwargs={"num_spaces_to_remove": args.remove_spaces, "probability": 1})
 
         eval_dataset_featurized = eval_dataset.map(
             prepare_eval_dataset,
