@@ -5,3 +5,7 @@ env
 trained_model*
 model
 trained_og_model
+eval_output*
+writeup
+.DS_Store
+.vscode

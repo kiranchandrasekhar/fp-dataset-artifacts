@@ -1,0 +1,5 @@
+{"eval_loss": 0.38636907935142517, "eval_model_preparation_time": 0.0021, "eval_accuracy": 0.893619179725647, "eval_runtime": 66.0482, "eval_samples_per_second": 149.012, "eval_steps_per_second": 18.638}
+{"eval_loss": 0.4731298089027405, "eval_model_preparation_time": 0.0021, "eval_accuracy": 0.8696402907371521, "eval_runtime": 74.2227, "eval_samples_per_second": 132.601, "eval_steps_per_second": 16.585}
+{"eval_loss": 0.5609487295150757, "eval_model_preparation_time": 0.0022, "eval_accuracy": 0.8420036435127258, "eval_runtime": 76.2523, "eval_samples_per_second": 129.072, "eval_steps_per_second": 16.144}
+{"eval_loss": 0.6689517498016357, "eval_model_preparation_time": 0.0023, "eval_accuracy": 0.8096931576728821, "eval_runtime": 75.9793, "eval_samples_per_second": 129.535, "eval_steps_per_second": 16.202}
+{"eval_loss": 0.7663267254829407, "eval_model_preparation_time": 0.0021, "eval_accuracy": 0.7852062582969666, "eval_runtime": 74.8802, "eval_samples_per_second": 131.437, "eval_steps_per_second": 16.44}

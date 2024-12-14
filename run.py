@@ -9,6 +9,7 @@ import json
 
 import re
 import random
+import string
 
 NUM_PREPROCESSING_WORKERS = 2
 
@@ -33,6 +34,27 @@ def add_spelling_errors(datum, num_letters_to_remove=2, probability=1):
         char_to_remove = random.randint(0, len(word_to_edit)-1)
 
         new_word = word_to_edit[:char_to_remove] + word_to_edit[char_to_remove+1:]
+        datum['premise'] = premise[:spaces[word_i_to_edit]+1] + new_word + premise[spaces[word_i_to_edit] + len(word_to_edit) + 1:]
+
+    return datum
+
+def add_wrong_letters(datum, num_letters_to_change=2, probability=1):
+    if random.random() >= probability:
+        return datum
+        
+    for i in range(num_letters_to_change):
+        premise = datum['premise']
+        spaces = [-1]
+        spaces += [m.start() for m in re.finditer('\\s', premise)]
+        words = premise.split()
+
+        word_i_to_edit = random.randint(0, len(words)-1)
+        word_to_edit = words[word_i_to_edit]
+        if len(word_to_edit) <= 1:
+            continue
+        char_to_remove = random.randint(0, len(word_to_edit)-1)
+
+        new_word = word_to_edit[:char_to_remove] + random.choice(string.ascii_letters) + word_to_edit[char_to_remove+1:]
         datum['premise'] = premise[:spaces[word_i_to_edit]+1] + new_word + premise[spaces[word_i_to_edit] + len(word_to_edit) + 1:]
 
     return datum
@@ -93,6 +115,8 @@ def main():
     
     argp.add_argument('--remove_letters', type=int, default=0,
                       help='Limit the number of letters to remove from premises')
+    argp.add_argument('--change_letters', type=int, default=0,
+                      help='Limit the number of letters to change from premises')
     argp.add_argument('--remove_spaces', type=int, default=0,
                     help='Limit the number of spaces to remove from premises')
     argp.add_argument('--preprocess_prob', type=float, default=.05,
@@ -166,6 +190,7 @@ def main():
 
         train_dataset = train_dataset.map(add_ids, with_indices=True)
         train_dataset = train_dataset.map(add_spelling_errors, fn_kwargs={"num_letters_to_remove": args.remove_letters,"probability": args.preprocess_prob})
+        train_dataset = train_dataset.map(add_wrong_letters, fn_kwargs={"num_letters_to_change": args.change_letters, "probability": 1})
         train_dataset = train_dataset.map(remove_spaces, fn_kwargs={"num_spaces_to_remove": args.remove_spaces, "probability": args.preprocess_prob})
 
         train_dataset_featurized = train_dataset.map(
@@ -181,6 +206,7 @@ def main():
 
         eval_dataset = eval_dataset.map(add_ids, with_indices=True)
         eval_dataset = eval_dataset.map(add_spelling_errors, fn_kwargs={"num_letters_to_remove": args.remove_letters,"probability": 1})
+        eval_dataset = eval_dataset.map(add_wrong_letters, fn_kwargs={"num_letters_to_change": args.change_letters, "probability": 1})
         eval_dataset = eval_dataset.map(remove_spaces, fn_kwargs={"num_spaces_to_remove": args.remove_spaces, "probability": 1})
 
         eval_dataset_featurized = eval_dataset.map(
